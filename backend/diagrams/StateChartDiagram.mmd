@@ -1,0 +1,7 @@
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Monitoring : Start Monitoring
+    Monitoring --> Processing : File Detected
+    Processing --> Analyzing : Extract Metadata
+    Analyzing --> Reporting : Calculate Risk
+    Reporting --> Idle : Report Completed

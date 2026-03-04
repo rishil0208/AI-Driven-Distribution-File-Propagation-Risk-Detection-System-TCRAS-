@@ -1,0 +1,22 @@
+classDiagram
+    class EventLog {
+        +int id
+        +str filename
+        +str file_hash
+        +int file_size_bytes
+        +str source_ip
+        +str destination_ip
+        +datetime timestamp
+        +float risk_score
+        +str risk_level
+        +save()
+    }
+
+    class RiskMonitorHandler {
+        +str source_ip
+        +str user
+        +process(event)
+        +on_created(event)
+    }
+
+    EventLog --> RiskMonitorHandler : "processed by"

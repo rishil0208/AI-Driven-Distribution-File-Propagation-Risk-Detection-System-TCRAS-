@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant User
+    participant TransferApp
+    participant Agent
+    participant ServerAPI
+    participant RiskEngine
+    participant Dashboard
+
+    User->>TransferApp: Sends File
+    TransferApp->>Agent: Detect File
+    Agent->>ServerAPI: POST Event
+    ServerAPI->>RiskEngine: Analyze Risk
+    RiskEngine-->>ServerAPI: Risk Score
+    ServerAPI->>Dashboard: Update Graph
+    Dashboard->>User: Display Alert
